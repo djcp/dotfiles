@@ -63,3 +63,12 @@ setopt CORRECT CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
+
+# DJCP's direct customizations
+HISTSIZE=5000
+SAVEHIST=10000
+HISTFILE=~/.bash_history
+
+# PROMPT=$'%{\033[34m%}%~ $%{\033[0m%} '
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+RPROMPT=$'%{\033[1;33m%}(%h)%{\033[0;0m%}'

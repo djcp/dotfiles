@@ -104,3 +104,5 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Space is inserted via <C-v><Space>
 " see ':h map_space' in vim for further info
 let mapleader = " "
+
+set guifont=Monaco:h14
