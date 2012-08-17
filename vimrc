@@ -106,3 +106,5 @@ au BufRead,BufNewFile *.md set filetype=markdown
 let mapleader = " "
 
 set guifont=Monaco:h14
+
+set colorcolumn=80
