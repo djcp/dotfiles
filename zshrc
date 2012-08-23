@@ -70,6 +70,6 @@ SAVEHIST=10000
 HISTFILE=~/.bash_history
 
 # PROMPT=$'%{\033[34m%}%~ $%{\033[0m%} '
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=/usr/local/bin:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 RPROMPT=$'%{\033[1;35m%}(%h)%{\033[0;0m%}'
 source /Users/djcp/.rvm/scripts/rvm
