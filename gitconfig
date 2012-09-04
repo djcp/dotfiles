@@ -11,4 +11,8 @@
   mm = !git checkout master && git merge @{-1} --ff-only
 [user]
   name = djcp
-  email = dan@collispuro.net
+  email = djcp@thoughtbot.com
+[core]
+  excludesfile = /Users/djcp/.gitignore
+[branch]
+  autosetuprebase = always
