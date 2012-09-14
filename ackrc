@@ -1,2 +1,4 @@
+-i
+-a
 --ignore-dir=tmp
 --ignore-dir=log

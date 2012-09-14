@@ -105,6 +105,11 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " see ':h map_space' in vim for further info
 let mapleader = " "
 
-set guifont=Monaco:h18
+set guifont=Liberation\ Mono\ 14
+
+set mousehide
+set mouse=a
+set guioptions-=m
+set guioptions-=T
 
 set colorcolumn=80
