@@ -40,7 +40,16 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
+
+reset_color="[\033[00m\]"
+# adds the current branch name in green
+git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null)
+  if [[ -n $ref ]]; then
+    echo "[${ref#refs/heads/}] "
+  fi
+}
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -54,7 +63,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\e[01;31m\]$(git_prompt_info)\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\] \[\e[01;34m\]\w\[\e[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -110,5 +119,5 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 
