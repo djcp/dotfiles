@@ -42,12 +42,19 @@ esac
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
-reset_color="[\033[00m\]"
 # adds the current branch name in green
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
+  change_count=$(git status -s 2> /dev/null | wc -l)
+  output=""
   if [[ -n $ref ]]; then
-    echo "[${ref#refs/heads/}] "
+    output="[${ref#refs/heads/}"
+  fi
+  if [[ $change_count -gt 0 ]]; then
+    output="$output $change_count"
+  fi
+  if [[ -n $output ]]; then
+    echo "$output] "
   fi
 }
 
