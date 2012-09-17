@@ -6,13 +6,16 @@ alias tlf="tail -f"
 alias ln='ln -v'
 alias mkdir='mkdir -p'
 alias ...='../..'
+
 alias l='ls'
-alias ll='ls -al'
+alias ll='ls -alF'
 alias lh='ls -Alh'
-#alias -g G='| grep'
-# alias -g M='| less'
-# alias -g L='| wc -l'
-# alias -g ONE="| awk '{ print \$1}'"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias rgrep='grep -r --color=auto'
+alias rigrep='grep -ir --color=auto'
 
 # git
 alias g="git"
