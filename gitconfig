@@ -13,6 +13,6 @@
   name = djcp
   email = djcp@thoughtbot.com
 [core]
-  excludesfile = /Users/djcp/.gitignore
+  excludesfile = /home/djcp/.gitignore
 [branch]
   autosetuprebase = always
