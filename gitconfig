@@ -16,3 +16,5 @@
   excludesfile = /home/djcp/.gitignore
 [branch]
   autosetuprebase = always
+[color]
+	ui = true

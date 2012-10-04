@@ -2,3 +2,4 @@
 -a
 --ignore-dir=tmp
 --ignore-dir=log
+--ignore-dir=coverage

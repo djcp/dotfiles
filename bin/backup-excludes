@@ -1,0 +1,9 @@
+*~
+*.log
+*.swp
+tmp/
+cache/
+var/log/
+log/*log
+Dropbox/
+.cache/

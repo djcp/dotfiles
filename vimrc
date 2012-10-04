@@ -63,7 +63,7 @@ let g:snippetsEmu_key = "<S-Tab>"
 
 " Tab completion options
 set wildmode=list:longest,list:full
-set complete=.,w,t
+" set complete=.,w,t
 
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
