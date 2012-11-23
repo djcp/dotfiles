@@ -93,6 +93,12 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" Switch and manage tabs more better
+nnoremap <Tab> <C-W>w
+nnoremap <Bar> <C-W>v<C-W><Right>
+nnoremap -     <C-W>s<C-W><Down>
+
+
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 

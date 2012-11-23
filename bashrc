@@ -43,7 +43,36 @@ git_prompt_info() {
   fi
 }
 
-PS1='\[\e[01;31m\]$(git_prompt_info)\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\] \[\e[01;34m\]\w\[\e[00m\]\$ '
+#PS1='\[\e[01;31m\]$(git_prompt_info)\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\] \[\e[01;34m\]\w\[\e[00m\]\$ '
+
+PASS='✔'
+FAIL='✘'
+SEGV='☢'
+SUPER='⚡'
+CLEAR='\e[0m'
+RED="${CLEAR}\[\e[41m\]"
+REDFG="${CLEAR}\[\e[31m\]"
+GREEN="${CLEAR}\[\e[42m\]"
+WHITE="\[\e[0m\]"
+LIGHT_BLUE="${CLEAR}\[\e[1;34m\]"
+YELLOW="${CLEAR}\[\e[33m\]"
+LIGHT_CYAN="${CLEAR}\[\e[1;36m\]"
+PURPLE="${CLEAR}\[\e[0;35m\]"
+
+ISSUDO=''
+if [ $UID == 0 ]; then
+    ISSUDO=" ${REDFG}-⚡⚡⚡-"
+fi
+
+PS1="\n┎\`RC=\$?;\
+if [ \$RC = 0 ]; then echo ${GREEN}${PASS}${WHITE};\
+elif [ \$RC = 139 ]; then echo ${RED}${SEGV}${WHITE};\
+else echo ${RED}${FAIL}${WHITE}; fi\`\
+ ${LIGHT_BLUE}\u@\H ${YELLOW}\t\
+ ${WHITE}{${LIGHT_CYAN}\w${WHITE}}\
+ ${PURPLE}\$(git_prompt_info) -------- ${WHITE}${ISSUDO}\
+\n┖ \$${WHITE} "
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -61,3 +90,5 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
