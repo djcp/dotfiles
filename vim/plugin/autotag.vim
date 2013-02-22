@@ -42,6 +42,7 @@ vim_global_defaults = dict(maxTagsFileSize = 1024*1024*7,
                            CtagsCmd = "ctags",
                            TagsFile = "tags",
                            Disabled = 0,
+                           CtagsOptions = "--exclude='*.js' --langmap='ruby:+.rake.builder.rjs' --languages=-javascript",
                            StopAt = 0)
 
 # Just in case the ViM build you're using doesn't have subprocess
@@ -137,6 +138,7 @@ class AutoTag:
       AutoTag.setVerbosity()
       self.sep_used_by_ctags = '/'
       self.ctags_cmd = vim_global("CtagsCmd")
+      self.ctags_options = vim_global("CtagsOptions")
       self.tags_file = str(vim_global("TagsFile"))
       self.count = 0
       self.stop_at = vim_global("StopAt")
@@ -223,9 +225,9 @@ class AutoTag:
    def updateTagsFile(self, tagsDir, tagsFile, sources):
       self.stripTags(tagsFile, sources)
       if self.tags_file:
-         cmd = "%s --exclude='*.js' -f %s --langmap='ruby:+.rake.builder.rjs' --languages=-javascript -a " % (self.ctags_cmd, self.tags_file)
+         cmd = "%s -f %s %s -a " % (self.ctags_cmd, self.tags_file, self.ctags_options)
       else:
-         cmd = "%s --exclude='*.js' --langmap='ruby:+.rake.builder.rjs' --languages=-javascript -a " % (self.ctags_cmd,)
+         cmd = "%s %s -a " % (self.ctags_cmd, self.ctags_options)
       for source in sources:
          if os.path.isfile(os.path.join(tagsDir, source)):
             cmd += ' "%s"' % source
