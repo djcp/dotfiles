@@ -7,3 +7,5 @@ var/log/
 log/*log
 Dropbox/
 .cache/
+virtual_machines/
+VirtualBox*
