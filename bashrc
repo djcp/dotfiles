@@ -64,15 +64,16 @@ if [ $UID == 0 ]; then
     ISSUDO=" ${REDFG}-⚡⚡⚡-"
 fi
 
+WEATHER=$(< ~/.cli-weather-forecast)
+
 PS1="\n┎\`RC=\$?;\
 if [ \$RC = 0 ]; then echo ${GREEN}${PASS}${WHITE};\
 elif [ \$RC = 139 ]; then echo ${RED}${SEGV}${WHITE};\
 else echo ${RED}${FAIL}${WHITE}; fi\`\
  ${LIGHT_BLUE}\u@\H ${YELLOW}\t\
  ${WHITE}{${LIGHT_CYAN}\w${WHITE}}\
- ${PURPLE}\$(git_prompt_info) -------- ${WHITE}${ISSUDO}\
+ ${PURPLE}\$(git_prompt_info) -- ${CLEAR}${WHITE}${WEATHER}${CLEAR}${WHITE}${ISSUDO}\
 \n┖ \$${WHITE} "
-
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -89,6 +90,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 PATH=$PATH:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
+

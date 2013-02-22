@@ -3,3 +3,5 @@
 --ignore-dir=tmp
 --ignore-dir=log
 --ignore-dir=coverage
+--ignore-dir=data/recipeml
+--ignore-dir=spec/cassettes
