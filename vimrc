@@ -44,6 +44,10 @@ if filereadable("~/.vimrc.local")
   source ~/.vimrc.local
 endif
 
+if has("python")
+  source ~/.vim/plugin/autotag.vim
+endif
+
 " Use Ack instead of Grep when available
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
@@ -111,7 +115,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " see ':h map_space' in vim for further info
 let mapleader = " "
 
-set guifont=Liberation\ Mono\ 12
+set guifont=Liberation\ Mono\ 14
 
 set mousehide
 set mouse=a
@@ -119,3 +123,4 @@ set guioptions-=m
 set guioptions-=T
 
 set colorcolumn=80
+
