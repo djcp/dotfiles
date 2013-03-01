@@ -1,0 +1,2 @@
+#!/bin/bash
+ctags -f tags -R --exclude='*.js' --langmap="ruby:+.rake.builder.rjs" --languages=-javascript ./
