@@ -115,7 +115,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " see ':h map_space' in vim for further info
 let mapleader = " "
 
-set guifont=Liberation\ Mono\ 14
+set guifont=Liberation\ Mono\ 12
 
 set mousehide
 set mouse=a
@@ -123,4 +123,7 @@ set guioptions-=m
 set guioptions-=T
 
 set colorcolumn=80
+
+map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
+map <F3> :source ~/.vim_session <cr>     " And load session with F3
 
