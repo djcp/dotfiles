@@ -14,6 +14,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" Set up vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
 filetype plugin indent on
 
 augroup vimrcEx
@@ -42,10 +47,6 @@ set list listchars=tab:»·,trail:·
 " Local config
 if filereadable("~/.vimrc.local")
   source ~/.vimrc.local
-endif
-
-if has("python")
-  source ~/.vim/plugin/autotag.vim
 endif
 
 " Use Ack instead of Grep when available
@@ -115,7 +116,9 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " see ':h map_space' in vim for further info
 let mapleader = " "
 
-set guifont=Liberation\ Mono\ 12
+" set guifont=Liberation\ Mono\ 12
+set guifont=Liberation\ Mono\ for\ Powerline\ 12
+let g:Powerline_symbols = 'fancy'
 
 set mousehide
 set mouse=a
@@ -127,3 +130,19 @@ set colorcolumn=80
 map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
 map <F3> :source ~/.vim_session <cr>     " And load session with F3
 
+
+Bundle 'gmarik/vundle'
+Bundle 'christoomey/magictags'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tomtom/tcomment_vim'
+
+if exists("g:initialized_vim") && g:initialized_vim
+  finish
+endif
+
+let g:initialized_vim = 1
+" Everything below here runs only on initialization and is not resourced.
+cd ~/code
