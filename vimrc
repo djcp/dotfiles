@@ -135,9 +135,14 @@ Bundle 'gmarik/vundle'
 Bundle 'christoomey/magictags'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'timcharper/textile.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 if exists("g:initialized_vim") && g:initialized_vim
   finish
