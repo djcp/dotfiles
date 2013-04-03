@@ -109,6 +109,7 @@ let g:html_indent_tags = 'li\|p'
 
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile Vagrantfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " Leader: set to <Space>
@@ -117,8 +118,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 let mapleader = " "
 
 " set guifont=Liberation\ Mono\ 12
-set guifont=Liberation\ Mono\ for\ Powerline\ 12
-let g:Powerline_symbols = 'fancy'
+set guifont=Liberation\ Mono\ 12
 
 set mousehide
 set mouse=a
@@ -126,6 +126,8 @@ set guioptions-=m
 set guioptions-=T
 
 set colorcolumn=80
+
+let cwd=getcwd()
 
 map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
 map <F3> :source ~/.vim_session <cr>     " And load session with F3
@@ -139,7 +141,6 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'timcharper/textile.vim'
 Bundle 'kchmck/vim-coffee-script'
