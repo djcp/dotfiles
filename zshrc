@@ -15,9 +15,7 @@ export EDITOR=vim
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
-
-# vi mode
-bindkey -v
+# vi mode bindkey -v
 bindkey "^F" vi-cmd-mode
 bindkey jj vi-cmd-mode
 
@@ -37,8 +35,56 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 # expand functions in the prompt
 setopt prompt_subst
 
-# prompt
-export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
+git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null)
+  change_count=$(git status -s 2> /dev/null | wc -l)
+  output=""
+  if [[ -n $ref ]]; then
+    output="[${ref#refs/heads/}"
+  fi
+  if [[ $change_count -gt 0 ]]; then
+    output="$output $change_count"
+  fi
+  if [[ -n $output ]]; then
+    echo "$output] "
+  fi
+}
+
+PASS='✔'
+FAIL='✘'
+SEGV='☢'
+SUPER='⚡'
+CLEAR=$'%{\033[0;0m%}'
+RED=$'%{\033[0;0m%}%{\033[1;41m%}'
+GREEN=$'%{\033[0;0m%}%{\033[0;42m%}'
+WHITE=$'%{\033[0;0m%}'
+LIGHT_BLUE=$'%{\033[0;0m%}%{\033[0;34m%}'
+YELLOW=$'%{\033[0;0m%}%{\033[0;33m%}'
+LIGHT_CYAN=$'%{\033[0;0m%}%{\033[0;36m%}'
+PURPLE=$'%{\033[0;0m%}%{\033[0;35m%}'
+
+return_prompt() {
+  RC=$?
+  RETURN_OUTPUT=''
+  if [ $RC -eq 0 ]; then
+    echo "${GREEN}${PASS}${WHITE}"
+  elif [ $RC -eq 139 ]; then
+    echo "${RED}${SEGV}${WHITE}"
+  else
+    echo "${RED}${FAIL}${WHITE}"
+  fi
+}
+
+weather_prompt() {
+  cat ~/.cli-weather-forecast
+}
+
+PS1="
+\$(return_prompt) ${LIGHT_BLUE}%n@%m ${YELLOW}%*\
+ ${WHITE}{${LIGHT_CYAN}%~${WHITE}}\
+ ${PURPLE}\$(git_prompt_info) -- ${CLEAR}${WHITE}\$(weather_prompt)${CLEAR}${WHITE}\
+
+┖ \$ "
 
 # ignore duplicate history entries
 setopt histignoredups
@@ -65,11 +111,14 @@ setopt cdablevars
 setopt EXTENDED_GLOB
 
 # DJCP's direct customizations
-HISTSIZE=5000
-SAVEHIST=10000
+HISTSIZE=500000
+SAVEHIST=1000000
 HISTFILE=~/.bash_history
 
-# PROMPT=$'%{\033[34m%}%~ $%{\033[0m%} '
-PATH=/usr/local/bin:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-RPROMPT=$'%{\033[1;35m%}(%h)%{\033[0;0m%}'
-source /Users/djcp/.rvm/scripts/rvm
+TERM=xterm-256color
+
+# PATH=/usr/local/bin:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+#source /home/djcp/.rvm/scripts/rvm
+export SHELL=/usr/bin/zsh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
