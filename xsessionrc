@@ -1,0 +1,1 @@
+xinput --set-prop 11 "Evdev Middle Button Emulation" 1
