@@ -55,7 +55,8 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme vividchalk
+colorscheme detailed
+"colorscheme vividchalk
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -115,10 +116,21 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Leader: set to <Space>
 " Space is inserted via <C-v><Space>
 " see ':h map_space' in vim for further info
-let mapleader = " "
+let mapleader = ","
+" map <Leader>i mmgg=G`m<CR>
+nnoremap <Leader>= mmgg=G`mzz
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+
+let g:rspec_command = "!clear && bundle exec rspec -fd {spec}"
+
 
 " set guifont=Liberation\ Mono\ 12
-set guifont=Liberation\ Mono\ 12
+set guifont=Droid\ Sans\ Mono\ 12
 
 set mousehide
 set mouse=a
@@ -132,6 +144,10 @@ let cwd=getcwd()
 map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
 map <F3> :source ~/.vim_session <cr>     " And load session with F3
 
+set cm=blowfish
+
+" set rnu
+set scrolloff=999
 
 Bundle 'gmarik/vundle'
 Bundle 'christoomey/magictags'
@@ -141,9 +157,12 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'timcharper/textile.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'danchoi/vmail'
 
 if exists("g:initialized_vim") && g:initialized_vim
   finish
@@ -151,4 +170,4 @@ endif
 
 let g:initialized_vim = 1
 " Everything below here runs only on initialization and is not resourced.
-cd ~/code
+

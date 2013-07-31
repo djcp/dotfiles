@@ -113,12 +113,10 @@ setopt EXTENDED_GLOB
 # DJCP's direct customizations
 HISTSIZE=500000
 SAVEHIST=1000000
-HISTFILE=~/.bash_history
+HISTFILE=~/.zsh_history
 
 TERM=xterm-256color
 
-# PATH=/usr/local/bin:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-#source /home/djcp/.rvm/scripts/rvm
 export SHELL=/usr/bin/zsh
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH:$HOME/code/spx/apache-maven-3.0.5/bin"
 eval "$(rbenv init -)"
