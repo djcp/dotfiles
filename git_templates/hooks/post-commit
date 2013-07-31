@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PWD=`pwd`
+GIT_REPO=`git rev-parse --show-toplevel`
+GIT_ROOT=`basename $GIT_REPO`
+DATE=`date`
+
+IMAGE_ROOT="$GIT_REPO/tmp/images"
+
+mkdir -p $IMAGE_ROOT
+
+LAST_COMMIT=`git rev-parse HEAD`
+
+mplayer -vo png:outdir=$IMAGE_ROOT:prefix=${LAST_COMMIT}-:z=8 -frames 2 tv:// &> /dev/null
+
+convert $IMAGE_ROOT/${LAST_COMMIT}-00000002.png -background Yellow label:"$GIT_ROOT :: $LAST_COMMIT :: $DATE" +swap -gravity Center -append $IMAGE_ROOT/${LAST_COMMIT}.png
+
+rm $IMAGE_ROOT/${LAST_COMMIT}-000*.png
+

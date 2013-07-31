@@ -1,2 +1,6 @@
 *.swp
 *.log
+/tags
+elasticsearch/logs
+log/*
+tmp/images
