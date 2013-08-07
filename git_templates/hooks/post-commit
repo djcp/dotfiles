@@ -11,9 +11,9 @@ mkdir -p $IMAGE_ROOT
 
 LAST_COMMIT=`git rev-parse HEAD`
 
-mplayer -vo png:outdir=$IMAGE_ROOT:prefix=${LAST_COMMIT}-:z=8 -frames 2 tv:// &> /dev/null
+mplayer -vo png:outdir=$IMAGE_ROOT:prefix=${LAST_COMMIT}-:z=8 -frames 6 tv:// &> /dev/null
 
-convert $IMAGE_ROOT/${LAST_COMMIT}-00000002.* -background Yellow label:"$GIT_ROOT :: $LAST_COMMIT :: $DATE" +swap -gravity Center -append $IMAGE_ROOT/${LAST_COMMIT}.png
+convert $IMAGE_ROOT/${LAST_COMMIT}-00000006.* -background Yellow label:"$GIT_ROOT :: $LAST_COMMIT :: $DATE" +swap -gravity Center -append $IMAGE_ROOT/${LAST_COMMIT}.png
 
 rm $IMAGE_ROOT/${LAST_COMMIT}-000*
 
