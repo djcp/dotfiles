@@ -112,6 +112,8 @@ let g:html_indent_tags = 'li\|p'
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.mkd set filetype=markdown
+au BufRead,BufNewFile *.coffee set filetype=coffee
 
 " Leader: set to <Space>
 " Space is inserted via <C-v><Space>
@@ -124,6 +126,9 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+nnoremap <Leader>n :tabn<CR>
+nnoremap <Leader>p :tabp<CR>
+nnoremap <Leader>e :tabe
 
 
 let g:rspec_command = "!clear && bundle exec rspec -fd {spec}"
@@ -150,7 +155,6 @@ set cm=blowfish
 set scrolloff=999
 
 Bundle 'gmarik/vundle'
-Bundle 'christoomey/magictags'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-haml'
