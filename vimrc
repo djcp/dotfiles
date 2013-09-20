@@ -167,6 +167,10 @@ Bundle 'timcharper/textile.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'danchoi/vmail'
+Bundle 'mhinz/vim-startify'
+
+let g:startify_custom_header =
+      \ map(split(system('figlet -f future `shuf -n1 ~/.vim/palindromes.txt`'), '\n'), '"   ". v:val') + ['','']
 
 if exists("g:initialized_vim") && g:initialized_vim
   finish

@@ -118,5 +118,5 @@ HISTFILE=~/.zsh_history
 TERM=xterm-256color
 
 export SHELL=/usr/bin/zsh
-export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH:$HOME/code/spx/apache-maven-3.0.5/bin"
+export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
