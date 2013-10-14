@@ -75,14 +75,14 @@ return_prompt() {
   fi
 }
 
-weather_prompt() {
-  cat ~/.cli-weather-forecast
-}
+# weather_prompt() {
+#   cat ~/.cli-weather-forecast
+# }
 
 PS1="
 \$(return_prompt) ${LIGHT_BLUE}%n@%m ${YELLOW}%*\
  ${WHITE}{${LIGHT_CYAN}%~${WHITE}}\
- ${PURPLE}\$(git_prompt_info) -- ${CLEAR}${WHITE}\$(weather_prompt)${CLEAR}${WHITE}\
+ ${PURPLE}\$(git_prompt_info) -- ${CLEAR}${WHITE}${CLEAR}${WHITE}\
 
 ┖ \$ "
 
@@ -115,7 +115,7 @@ HISTSIZE=500000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
 
-TERM=xterm-256color
+export TERM=xterm-256color
 
 export SHELL=/usr/bin/zsh
 export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"

@@ -101,8 +101,8 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Switch and manage tabs more better
 nnoremap <Tab> <C-W>w
-nnoremap <Bar> <C-W>v<C-W><Right>
-nnoremap -     <C-W>s<C-W><Down>
+" nnoremap <Bar> <C-W>v<C-W><Right>
+" nnoremap -     <C-W>s<C-W><Down>
 
 
 " Treat <li> and <p> tags like the block tags they are
@@ -131,11 +131,11 @@ nnoremap <Leader>p :tabp<CR>
 nnoremap <Leader>e :tabe
 
 
-let g:rspec_command = "!clear && bundle exec rspec -fd {spec}"
+let g:rspec_command = "!bundle exec rspec -fd {spec}"
 
 
 " set guifont=Liberation\ Mono\ 12
-set guifont=Droid\ Sans\ Mono\ 12
+" set guifont=Droid\ Sans\ Mono\ 12
 
 set mousehide
 set mouse=a
@@ -150,6 +150,8 @@ map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
 map <F3> :source ~/.vim_session <cr>     " And load session with F3
 
 set cm=blowfish
+
+" set relativenumber
 
 " set rnu
 set scrolloff=999
