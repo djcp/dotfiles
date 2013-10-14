@@ -64,3 +64,6 @@ alias db-backup-production='heroku pgbackups:capture --remote production'
 alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"
 
 alias xclip="xclip -selection c"
+alias i3lock="i3lock -c 000000"
+
+alias urlencode="ruby -e \"require 'cgi'; puts CGI.escape(ARGV.first);\""
