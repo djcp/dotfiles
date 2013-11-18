@@ -119,4 +119,5 @@ export TERM=xterm-256color
 
 export SHELL=/usr/bin/zsh
 export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+eval "$(rbenv init - --no-rehash)"
+export PATH="$HOME/.bin:$PATH"

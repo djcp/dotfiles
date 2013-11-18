@@ -163,7 +163,6 @@ bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 1dB- unmute
 # Autostart
 
 exec --no-startup-id SpiderOak
-exec --no-startup-id shutter --min_at_startup
 
 # key mappings
 exec --no-startup-id xmodmap ~/.xmodmap
@@ -179,3 +178,5 @@ bindsym $mod+control+n exec xdotool search --name Rdio && xdotool key --window $
 # Rdio Previous
 bindsym $mod+control+p exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) Left
 
+# Move workspaces
+bindsym $mod+m move workspace to output right
