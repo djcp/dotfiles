@@ -170,6 +170,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'danchoi/vmail'
 Bundle 'mhinz/vim-startify'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 let g:startify_custom_header =
       \ map(split(system('figlet -f future `shuf -n1 ~/.vim/palindromes.txt`'), '\n'), '"   ". v:val') + ['','']
