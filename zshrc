@@ -15,7 +15,8 @@ export EDITOR=vim
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
-# vi mode bindkey -v
+# vi mode
+bindkey -v
 bindkey "^F" vi-cmd-mode
 bindkey jj vi-cmd-mode
 
@@ -127,4 +128,4 @@ hitch() {
   if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
 }
 alias unhitch='hitch -u'
-hitch
+# hitch
