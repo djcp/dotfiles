@@ -14,3 +14,9 @@ URxvt.saveLines: 100000
 
 ! URxvt*font: xft:Droid Sans Mono:pixelsize=20:antialias=true:hinting=true
 ! URxvt*boldFont: xft:Droid Sans Mono:bold:pixelsize=20:antialias=true:hinting=true
+!
+URxvt.keysym.C-M-0: command:\033]710;xft:Terminus:pixelsize=22,style=regular\007
+URxvt.keysym.C-M-minus: command:\033]710;xft:Terminus:pixelsize=18,style=regular\007
+URxvt.keysym.C-M-equal: command:\033]710;xft:Terminus:pixelsize=32,style=regular\007
+
+! "xft:Terminus:pixelsize=22,style=regular"

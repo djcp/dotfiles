@@ -178,5 +178,7 @@ bindsym $mod+control+n exec xdotool search --name Rdio && xdotool key --window $
 # Rdio Previous
 bindsym $mod+control+p exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) Left
 
+bindsym $mod+control+l exec i3lock -c 000000
+
 # Move workspaces
 bindsym $mod+m move workspace to output right
