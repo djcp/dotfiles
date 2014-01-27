@@ -8,7 +8,6 @@ compinit
 # automatically enter directories without cd
 setopt auto_cd
 
-# use vim as an editor
 export EDITOR=vim
 
 # aliases
@@ -88,7 +87,7 @@ PS1="
 ┖ \$ "
 
 function zle-line-init zle-keymap-select {
-  RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+  RPS1="${LIGHT_CYAN}${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}${WHITE}"
   RPS2=$RPS1
   zle reset-prompt
 }
@@ -101,12 +100,6 @@ zle -N zle-keymap-select
 # ^^^^^^^^^^^^^^^^^^^^^ This might not make sense if we're tracking
 # history and are interested in analyzing it later.
 setopt EXTENDED_HISTORY
-
-# keep TONS of history
-export HISTSIZE=4096
-
-# look for ey config in project dirs
-export EYRC=./.eyrc
 
 # automatically pushd
 setopt auto_pushd
@@ -141,3 +134,4 @@ hitch() {
 }
 alias unhitch='hitch -u'
 # hitch
+

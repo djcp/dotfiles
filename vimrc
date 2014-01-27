@@ -109,6 +109,7 @@ nnoremap <Tab> <C-W>w
 let g:html_indent_tags = 'li\|p'
 
 " Improve syntax highlighting
+au BufRead,BufNewFile *.cap set filetype=ruby
 au BufRead,BufNewFile Gemfile set filetype=ruby
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -131,7 +132,8 @@ nnoremap <Leader>p :tabp<CR>
 nnoremap <Leader>e :tabe
 
 
-let g:rspec_command = "!bundle exec rspec -fd {spec}"
+" let g:rspec_command = "!bundle exec rspec -fd {spec}"
+let g:rspec_command = "!spring rspec -fd {spec}"
 
 
 " set guifont=Liberation\ Mono\ 12
@@ -172,6 +174,7 @@ Bundle 'danchoi/vmail'
 Bundle 'mhinz/vim-startify'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'kien/ctrlp.vim'
 
 let g:startify_custom_header =
       \ map(split(system('figlet -f future `shuf -n1 ~/.vim/palindromes.txt`'), '\n'), '"   ". v:val') + ['','']
