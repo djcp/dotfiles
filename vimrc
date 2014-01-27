@@ -175,6 +175,9 @@ Bundle 'mhinz/vim-startify'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
+
+" let g:airline_powerline_fonts = 1
 
 let g:startify_custom_header =
       \ map(split(system('figlet -f future `shuf -n1 ~/.vim/palindromes.txt`'), '\n'), '"   ". v:val') + ['','']
