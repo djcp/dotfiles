@@ -152,6 +152,7 @@ bar {
   colors {
     background  #111111
     statusline #cccccc
+    separator #ffff00
   }
   status_command ~/bin/i3status_custom.sh
 }
