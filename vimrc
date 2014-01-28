@@ -117,7 +117,10 @@ map <Leader>a :call RunAllSpecs()<CR>
 nnoremap <Leader>n :tabn<CR>
 nnoremap <Leader>p :tabp<CR>
 nnoremap <Leader>e :tabe
-
+nnoremap <Leader><Left> :vertical resize -5<cr>
+nnoremap <Leader><Down> :resize +5<cr>
+nnoremap <Leader><Up> :resize -5<cr>
+nnoremap <Leader><Right> :vertical resize +5<cr>
 
 " let g:rspec_command = "!bundle exec rspec -fd {spec}"
 let g:rspec_command = "!spring rspec -fd {spec}"
