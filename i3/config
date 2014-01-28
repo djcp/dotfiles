@@ -168,7 +168,7 @@ exec --no-startup-id SpiderOak
 # key mappings
 exec --no-startup-id xmodmap ~/.xmodmap
 # exec --no-startup-id xsetroot -solid "#333333"
-exec --no-startup-id feh --bg-fill `find ~/Pictures/backgrounds/ -type f -iname '*.jpg' | shuf | head -1`
+exec --no-startup-id ~/bin/random_background.sh
 
 # Rdio Pause
 bindsym $mod+control+space exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) space
