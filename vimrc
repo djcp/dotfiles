@@ -54,12 +54,6 @@ if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor
 endif
 
-" Color scheme
-colorscheme detailed
-"colorscheme vividchalk
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
 " Numbers
 set number
 set numberwidth=5
@@ -85,13 +79,6 @@ inoremap <s-tab> <c-n>
 
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
-" Cucumber navigation commands
-autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-" :Cuc my text (no quotes) -> runs cucumber scenarios containing "my text"
-command! -nargs=+ Cuc :!ack --no-heading --no-break <q-args> | cut -d':' -f1,2 | xargs bundle exec cucumber --no-color
-
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -135,10 +122,6 @@ nnoremap <Leader>e :tabe
 " let g:rspec_command = "!bundle exec rspec -fd {spec}"
 let g:rspec_command = "!spring rspec -fd {spec}"
 
-
-" set guifont=Liberation\ Mono\ 12
-" set guifont=Droid\ Sans\ Mono\ 12
-
 set mousehide
 set mouse=a
 set guioptions-=m
@@ -154,7 +137,6 @@ map <F3> :source ~/.vim_session <cr>     " And load session with F3
 set cm=blowfish
 
 " set relativenumber
-
 " set rnu
 set scrolloff=999
 
@@ -170,12 +152,18 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'timcharper/textile.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
-Bundle 'danchoi/vmail'
 Bundle 'mhinz/vim-startify'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
+Bundle 'rking/vim-detailed'
+
+" Color scheme
+colorscheme detailed
+
+" hi NonText ctermfg=250 ctermbg=none
+hi Normal          ctermfg=252 ctermbg=none
 
 " let g:airline_powerline_fonts = 1
 
@@ -187,5 +175,4 @@ if exists("g:initialized_vim") && g:initialized_vim
 endif
 
 let g:initialized_vim = 1
-" Everything below here runs only on initialization and is not resourced.
-
+" Everything below here runs only on initialization and is not re-sourced.

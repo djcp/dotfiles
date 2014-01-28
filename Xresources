@@ -1,4 +1,4 @@
-URxvt.background: Black
+! URxvt.background: Black
 URxvt.foreground: White
 ! URxvt.font: xft:Terminus:pixelsize=18:antialias=true:hinting=true
 ! URxvt.boldFont: xft:Terminus:bold:pixelsize=18:antialias=true:hinting=true
@@ -20,3 +20,8 @@ URxvt.keysym.C-M-minus: command:\033]710;xft:Terminus:pixelsize=18,style=regular
 URxvt.keysym.C-M-equal: command:\033]710;xft:Terminus:pixelsize=32,style=regular\007
 
 ! "xft:Terminus:pixelsize=22,style=regular"
+
+URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 5
+
