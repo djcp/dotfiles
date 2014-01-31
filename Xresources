@@ -1,4 +1,4 @@
-! URxvt.background: Black
+URxvt.background: Black
 URxvt.foreground: White
 ! URxvt.font: xft:Terminus:pixelsize=18:antialias=true:hinting=true
 ! URxvt.boldFont: xft:Terminus:bold:pixelsize=18:antialias=true:hinting=true
