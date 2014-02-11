@@ -1,0 +1,8 @@
+#!/bin/bash
+
+TRUSTED_NETWORKS="collispuro|thoughtbot"
+INTERFACE="wlan0"
+
+if (! /sbin/iwconfig $INTERFACE | grep -qiE "ESSID.+${TRUSTED_NETWORKS}"); then
+  i3lock -c 000000
+fi

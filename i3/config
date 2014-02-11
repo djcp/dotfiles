@@ -169,7 +169,7 @@ exec --no-startup-id SpiderOak
 exec --no-startup-id xmodmap ~/.xmodmap
 # exec --no-startup-id xsetroot -solid "#333333"
 exec --no-startup-id ~/bin/random_background.sh
-exec --no-startup-id xautolock -time 15 -locker 'i3lock -c 000000'
+exec --no-startup-id xautolock -time 15 -locker '~/bin/lock_on_untrusted_networks'
 
 # Rdio Pause
 bindsym $mod+control+space exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) space
