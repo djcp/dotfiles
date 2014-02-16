@@ -40,3 +40,5 @@ if [ "$ACTIVE_MONITOR" != '' ]; then
 else
   echo 'No non-LVDS1 monitor connected'
 fi
+
+~/bin/emulate_three_buttons_trackball.sh
