@@ -169,7 +169,6 @@ exec --no-startup-id SpiderOak
 exec --no-startup-id xmodmap ~/.xmodmap
 # exec --no-startup-id xsetroot -solid "#333333"
 exec --no-startup-id ~/bin/random_background.sh
-exec --no-startup-id xautolock -time 15 -locker '~/bin/lock_on_untrusted_networks'
 
 # Rdio Pause
 bindsym $mod+control+space exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) space
@@ -180,7 +179,11 @@ bindsym $mod+control+n exec xdotool search --name Rdio && xdotool key --window $
 # Rdio Previous
 bindsym $mod+control+p exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) Left
 
-bindsym $mod+control+l exec i3lock -c 000000
+# bindsym $mod+control+l exec i3lock -c 000000
+
+exec --no-startup-id xscreensaver -no-splash
+bindsym $mod+control+l exec xscreensaver-command --lock
+exec --no-startup-id xautolock -time 15 -locker '~/bin/lock_on_untrusted_networks'
 
 # Move workspaces
 bindsym $mod+m move workspace to output right

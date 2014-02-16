@@ -3,6 +3,9 @@
 TRUSTED_NETWORKS="collispuro|thoughtbot"
 INTERFACE="wlan0"
 
+# To work properly, you should disable timed screen locking in xscreensaver
+# configuration ('Lock screen after XX minutes') and then we can conditionally 
+# lock via xautolock and this script.
 if (! /sbin/iwconfig $INTERFACE | grep -qiE "ESSID.+${TRUSTED_NETWORKS}"); then
-  i3lock -c 000000
+  xscreensaver-command --lock
 fi
