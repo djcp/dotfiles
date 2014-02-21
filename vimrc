@@ -162,6 +162,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'rking/vim-detailed'
 
+" Make CtrlP use ag for listing the files.
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
 " Color scheme
 colorscheme detailed
 
