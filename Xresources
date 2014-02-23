@@ -1,27 +1,31 @@
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+
+Xft.hinting:    false
+Xft.hintstyle:  hintnone
+
+! If using a TTF font
+! Xft.hinting:    true
+! Xft.hintstyle:  hintfull
+
 URxvt.background: Black
 URxvt.foreground: White
-! URxvt.font: xft:Terminus:pixelsize=18:antialias=true:hinting=true
-! URxvt.boldFont: xft:Terminus:bold:pixelsize=18:antialias=true:hinting=true
-URxvt.font: terminus-22
-URxvt.boldFont: terminus-22
-URxvt.scrollBar: false
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: true
+URxvt.thickness: 8
 URxvt.fading: 30
-URxvt.scrollTtyOutput:      false
-URxvt.scrollWithBuffer:     true
-URxvt.scrollTtyKeypress:    true
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
 URxvt.saveLines: 100000
+URxvt.transparent: true
+URxvt.shading: 5
 
+URxvt.font: xft:Terminus:pixelsize=22
+URxvt.boldFont: xft:Terminus:bold:pixelsize=22
 
-! URxvt*font: xft:Droid Sans Mono:pixelsize=20:antialias=true:hinting=true
-! URxvt*boldFont: xft:Droid Sans Mono:bold:pixelsize=20:antialias=true:hinting=true
-!
-URxvt.keysym.C-M-0: command:\033]710;xft:Terminus:pixelsize=22,style=regular\007
-URxvt.keysym.C-M-minus: command:\033]710;xft:Terminus:pixelsize=18,style=regular\007
-URxvt.keysym.C-M-equal: command:\033]710;xft:Terminus:pixelsize=32,style=regular\007
-
-! "xft:Terminus:pixelsize=22,style=regular"
-
-URxvt*.transparent: true
-! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading: 5
+URxvt.keysym.C-M-minus: command:\033]710;xft:Terminus:pixelsize=18\007\033]711;xft:Terminus:pixelsize=18\007
+URxvt.keysym.C-M-0:     command:\033]710;xft:Terminus:pixelsize=22\007\033]711;xft:Terminus:pixelsize=22\007
+URxvt.keysym.C-M-equal: command:\033]710;xft:Terminus:pixelsize=26\007\033]711;xft:Terminus:pixelsize=26\007
 
