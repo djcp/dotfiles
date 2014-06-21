@@ -3,6 +3,7 @@
 cd
 
 DIRS="
+.weechat
 .Skype
 .cache
 .config
@@ -17,6 +18,7 @@ DIRS="
 .vmail
 .vmailrc
 Documents
+.aws
 "
 
 for DIR in $DIRS; do

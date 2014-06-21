@@ -43,7 +43,7 @@ git_prompt_info() {
   fi
 }
 
-#PS1='\[\e[01;31m\]$(git_prompt_info)\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\] \[\e[01;34m\]\w\[\e[00m\]\$ '
+PS1='\[\e[01;31m\]$(git_prompt_info)\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\] \[\e[01;34m\]\w\[\e[00m\]\$ '
 
 PASS='✔'
 FAIL='✘'
@@ -66,14 +66,14 @@ fi
 
 WEATHER=$(< ~/.cli-weather-forecast)
 
-PS1="\n┎\`RC=\$?;\
-if [ \$RC = 0 ]; then echo ${GREEN}${PASS}${WHITE};\
-elif [ \$RC = 139 ]; then echo ${RED}${SEGV}${WHITE};\
-else echo ${RED}${FAIL}${WHITE}; fi\`\
- ${LIGHT_BLUE}\u@\H ${YELLOW}\t\
- ${WHITE}{${LIGHT_CYAN}\w${WHITE}}\
- ${PURPLE}\$(git_prompt_info) -- ${CLEAR}${WHITE}${WEATHER}${CLEAR}${WHITE}${ISSUDO}\
-\n┖ \$${WHITE} "
+# PS1="\n┎\`RC=\$?;\
+# if [ \$RC = 0 ]; then echo ${GREEN}${PASS}${WHITE};\
+# elif [ \$RC = 139 ]; then echo ${RED}${SEGV}${WHITE};\
+# else echo ${RED}${FAIL}${WHITE}; fi\`\
+#  ${LIGHT_BLUE}\u@\H ${YELLOW}\t\
+#  ${WHITE}{${LIGHT_CYAN}\w${WHITE}}\
+#  ${PURPLE}\$(git_prompt_info) -- ${CLEAR}${WHITE}${WEATHER}${CLEAR}${WHITE}${ISSUDO}\
+# \n┖ \$${WHITE} "
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

@@ -186,5 +186,6 @@ exec --no-startup-id xscreensaver -no-splash
 bindsym $mod+control+l exec xscreensaver-command --lock
 exec --no-startup-id xautolock -time 15 -locker '~/bin/lock_on_untrusted_networks'
 
-# Move workspaces
+# Move workspaces across displays
 bindsym $mod+m move workspace to output right
+bindsym $mod+n move workspace to output left

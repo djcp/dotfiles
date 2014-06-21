@@ -57,6 +57,7 @@ endif
 " Numbers
 set number
 set numberwidth=5
+" set relativenumber
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
@@ -139,9 +140,7 @@ map <F3> :source ~/.vim_session <cr>     " And load session with F3
 
 set cm=blowfish
 
-" set relativenumber
-" set rnu
-set scrolloff=999
+set scrolloff=5
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails'
@@ -155,7 +154,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'timcharper/textile.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
-Bundle 'mhinz/vim-startify'
+" Bundle 'mhinz/vim-startify'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'kien/ctrlp.vim'
@@ -173,9 +172,9 @@ colorscheme detailed
 hi Normal          ctermfg=252 ctermbg=none
 
 " let g:airline_powerline_fonts = 1
-
-let g:startify_custom_header =
-      \ map(split(system('figlet -f future `shuf -n1 ~/.vim/palindromes.txt`'), '\n'), '"   ". v:val') + ['','']
+"
+" let g:startify_custom_header =
+"       \ map(split(system('figlet -f future `shuf -n1 ~/.vim/palindromes.txt`'), '\n'), '"   ". v:val') + ['','']
 
 if exists("g:initialized_vim") && g:initialized_vim
   finish

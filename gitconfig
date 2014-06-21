@@ -15,6 +15,7 @@
   witch-hunt = blame
   duff = diff
   dom = diff origin/master
+  dc = diff --cached
 [user]
   name = Dan Collis-Puro
   email = djcp@thoughtbot.com

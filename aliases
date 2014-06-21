@@ -4,9 +4,9 @@ alias todo='$EDITOR ~/.todo'
 # Unix
 alias tlf="tail -f"
 alias ln='ln -v'
-alias mkdir='mkdir -p'
 alias ...='../..'
 alias less='less -R'
+alias du='du --max-depth=1 -h'
 
 alias l='ls'
 alias ll='ls -alF'
