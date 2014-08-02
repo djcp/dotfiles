@@ -172,13 +172,13 @@ exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id ~/bin/random_background.sh
 
 # Rdio Pause
-bindsym $mod+control+space exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) space
+bindsym $mod+control+space exec ~/bin/rdio_control.sh pause
 
 # Rdio Next
-bindsym $mod+control+n exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) Right
+bindsym $mod+control+n exec ~/bin/rdio_control.sh next
 
 # Rdio Previous
-bindsym $mod+control+p exec xdotool search --name Rdio && xdotool key --window $(xdotool search --name Rdio) Left
+bindsym $mod+control+p exec ~/bin/rdio_control.sh previous
 
 # bindsym $mod+control+l exec i3lock -c 000000
 
