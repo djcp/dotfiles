@@ -19,7 +19,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-filetype plugin on
+filetype plugin indent on
 
 augroup vimrcEx
   au!
@@ -160,8 +160,6 @@ Bundle 'mattn/gist-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'rking/vim-detailed'
-
-runtime macros/matchit.vim
 
 " Make CtrlP use ag for listing the files.
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'

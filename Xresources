@@ -36,4 +36,3 @@ URxvt.keysym.C-M-5: command:\033]710;xft:Terminus:pixelsize=22\007\033]711;xft:T
 URxvt.keysym.C-M-6: command:\033]710;xft:Terminus:pixelsize=24\007\033]711;xft:Terminus:bold:pixelsize=24\007
 URxvt.keysym.C-M-7: command:\033]710;xft:Terminus:pixelsize=28\007\033]711;xft:Terminus:bold:pixelsize=28\007
 URxvt.keysym.C-M-8: command:\033]710;xft:Terminus:pixelsize=32\007\033]711;xft:Terminus:bold:pixelsize=32\007
-
