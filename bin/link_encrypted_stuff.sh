@@ -19,6 +19,9 @@ DIRS="
 .vmailrc
 Documents
 .aws
+.zsh_history
+.gem
+.icedove
 "
 
 for DIR in $DIRS; do
