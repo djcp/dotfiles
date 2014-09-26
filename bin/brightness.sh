@@ -14,7 +14,7 @@ case $action in
   down*)
     current_brightness=$((current_brightness - 20));
     if [ "$current_brightness" -lt "0" ]; then
-      current_brightness=10;
+      current_brightness=1;
     fi
     ;;
 esac

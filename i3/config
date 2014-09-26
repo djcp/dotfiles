@@ -160,8 +160,8 @@ bar {
 }
 
 # Volume Control -- DJCP
-bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Master 1dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 1dB- unmute
+bindsym XF86AudioRaiseVolume exec amixer -c 1 sset Master 1dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -c 1 sset Master 1dB- unmute
 
 # Autostart
 

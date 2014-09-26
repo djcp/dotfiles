@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ACTIVE_MONITOR=$(xrandr | grep ' connected' | grep -v 'LVDS1' | cut -f1 -d ' ')
+CONNECTED_MONITOR=$(xrandr | grep ' connected' | grep -vE 'LVDS1|eDP1' | cut -f1 -d ' ')
 
-if [ "$ACTIVE_MONITOR" != '' ]; then
-  xrandr --output $ACTIVE_MONITOR --auto --off
+if [ "$CONNECTED_MONITOR" != '' ]; then
+  xrandr --output $CONNECTED_MONITOR --auto --off
 else
-  echo 'No non-LVDS1 monitor connected'
+  echo 'No non-LVDS1 or eDP1 monitor connected'
 fi
