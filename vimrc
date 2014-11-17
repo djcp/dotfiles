@@ -103,6 +103,7 @@ au BufRead,BufNewFile Vagrantfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.mkd set filetype=markdown
 au BufRead,BufNewFile *.coffee set filetype=coffee
+au BufRead,BufNewFile *.less set filetype=css
 
 " Leader: set to <Space>
 " Space is inserted via <C-v><Space>
@@ -123,8 +124,8 @@ nnoremap <Leader><Down> :resize +5<cr>
 nnoremap <Leader><Up> :resize -5<cr>
 nnoremap <Leader><Right> :vertical resize +5<cr>
 
-" let g:rspec_command = "!bundle exec rspec -fd {spec}"
-let g:rspec_command = "!spring rspec -fd {spec}"
+let g:rspec_command = "!bundle exec rspec -fd {spec}"
+" let g:rspec_command = "!spring rspec -fd {spec}"
 
 set mousehide
 set mouse=a
@@ -175,6 +176,11 @@ hi Normal          ctermfg=252 ctermbg=none
 "
 " let g:startify_custom_header =
 "       \ map(split(system('figlet -f future `shuf -n1 ~/.vim/palindromes.txt`'), '\n'), '"   ". v:val') + ['','']
+
+set undofile
+set undodir=$HOME/.vim/undo/
+set undolevels=1000
+set undoreload=10000
 
 if exists("g:initialized_vim") && g:initialized_vim
   finish

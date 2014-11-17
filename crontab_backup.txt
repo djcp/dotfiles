@@ -1,0 +1,5 @@
+12 * * * * cd /home/djcp/code/personal/cli-weather && ruby ./cli-weather.rb > ~/.cli-weather-forecast
+
+# */15 * * * * /home/djcp/bin/random_background.sh
+15 12 * * * /usr/bin/crontab -l > /home/djcp/Private/crontab_backup.txt
+2 12 * * * cd ~/.vim/undo && find -mtime +90 -type f -delete
