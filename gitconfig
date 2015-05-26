@@ -16,6 +16,8 @@
   duff = diff
   dom = diff origin/master
   dc = diff --cached
+  rbc = rebase --continue
+  rba = rebase --abort
 [user]
   name = Dan Collis-Puro
   email = dan@collispuro.net
