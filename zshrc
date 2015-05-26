@@ -80,7 +80,7 @@ return_prompt() {
 # }
 
 PS1="
-\$(return_prompt) ${LIGHT_BLUE}%n@%m ${YELLOW}%*\
+\$(return_prompt) ${LIGHT_BLUE}%n ${YELLOW}%*\
  ${WHITE}{${LIGHT_CYAN}%~${WHITE}}\
  ${PURPLE}\$(git_prompt_info) -- ${CLEAR}${WHITE}${CLEAR}${WHITE}\
 
@@ -124,7 +124,7 @@ HISTFILE=~/.zsh_history
 export TERM=xterm-256color
 
 export SHELL=/usr/bin/zsh
-export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/neovim/bin:$HOME/code/thirdparty/elasticbeanstalk/eb/linux/python2.7:$HOME/bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
 export PATH="$HOME/.bin:$PATH"
 
