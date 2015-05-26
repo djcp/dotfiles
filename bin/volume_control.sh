@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# soundbar_sink=$(pacmd list-sinks | grep 'card:' | grep Sound | cut -d: -f 2 | cut -d' ' -f 2)
+soundbar_sink=$(pacmd list-sinks | grep 'card:' | grep Sound | cut -d: -f 2 | cut -d' ' -f 2)
 action="$1"
 amount="2%"
 
