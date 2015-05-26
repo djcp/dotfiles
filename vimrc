@@ -99,11 +99,14 @@ let g:html_indent_tags = 'li\|p'
 " Improve syntax highlighting
 au BufRead,BufNewFile *.cap set filetype=ruby
 au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile Berksfile set filetype=ruby
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.mkd set filetype=markdown
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile *.less set filetype=css
+au BufRead,BufNewFile *.bats set filetype=sh
+au BufRead,BufNewFile *.properties.erb set filetype=jproperties
 
 " Leader: set to <Space>
 " Space is inserted via <C-v><Space>
@@ -161,6 +164,8 @@ Bundle 'mattn/gist-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'rking/vim-detailed'
+Bundle 'othree/html5.vim'
+Bundle 'vim-ruby/vim-ruby'
 
 " Make CtrlP use ag for listing the files.
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
