@@ -1,6 +1,6 @@
 #!/bin/bash
 
-soundbar_sink=$(pacmd list-sinks | grep 'card:' | grep Sound | cut -d: -f 2 | cut -d' ' -f 2)
+# soundbar_sink=$(pacmd list-sinks | grep 'card:' | grep Sound | cut -d: -f 2 | cut -d' ' -f 2)
 action="$1"
 amount="2%"
 
@@ -14,10 +14,10 @@ case $action in
 esac
 
 if [ "$soundbar_sink" = "" ]; then
-  non_soundbar_sink=$(pacmd list-sinks | grep 'index:' | tail -n1 | cut -d: -f 2)
+  non_soundbar_sink=$(pacmd list-sinks | grep '* index:' | tail -n1 | cut -d: -f 2)
   sink="$non_soundbar_sink"
 else
   sink="$soundbar_sink"
 fi
 
-pactl set-sink-volume "$sink" -- "$direction"
+pactl set-sink-volume $sink -- "$direction"
