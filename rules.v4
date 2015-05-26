@@ -1,0 +1,29 @@
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# allow connections we initiated
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# allow all loopback connections
+-A INPUT -i lo -j ACCEPT
+
+# allow rate-limited ICMP packets for ping, etc.
+-A INPUT -p icmp -m limit --limit 5/sec -j ACCEPT
+
+# allow access to public ports. 
+-A INPUT -p tcp -m multiport --dports 22,5000,7000,8000 -j ACCEPT
+
+# silently drop traffic to unused IPs
+#-A INPUT -d 72.232.223.66 -j DROP
+
+# reject any other unknown connections
+
+-A INPUT -p udp -m multiport --dports 32768:61000 -m comment --comment "Allow Chromecast UDP data (inbound)" -j ACCEPT
+-A INPUT -j LOG --log-prefix firewall:
+-A INPUT -p udp -j REJECT
+-A INPUT -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -j REJECT
+
+COMMIT
