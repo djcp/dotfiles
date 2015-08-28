@@ -15,6 +15,7 @@ if [ "$CONNECTED_MONITOR" != '' ]; then
   echo "2) left-of"
   echo "3) above"
   echo "4) below"
+  echo "5) mirror"
   echo -n '> '
 
   read ORIENTATION
@@ -31,6 +32,9 @@ if [ "$CONNECTED_MONITOR" != '' ]; then
       ;;
     4)
       ORIENTATION_OPTION="below"
+      ;;
+    5)
+      ORIENTATION_OPTION="same-as"
       ;;
     *)
       ORIENTATION_OPTION="right-of"
