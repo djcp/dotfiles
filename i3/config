@@ -169,7 +169,7 @@ bindsym XF86AudioLowerVolume exec ~/bin/volume_control.sh down
 
 # Autostart
 
-exec --no-startup-id SpiderOak
+# exec --no-startup-id SpiderOak
 
 # key mappings
 exec --no-startup-id xmodmap ~/.Xmodmap
