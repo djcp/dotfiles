@@ -7,6 +7,8 @@ set noswapfile
 set nowritebackup
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
+set ignorecase
+set smartcase
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -107,6 +109,7 @@ au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile *.less set filetype=css
 au BufRead,BufNewFile *.bats set filetype=sh
 au BufRead,BufNewFile *.properties.erb set filetype=jproperties
+au BufRead,BufNewFile OpsWorks*.template set filetype=json
 
 " Leader: set to <Space>
 " Space is inserted via <C-v><Space>

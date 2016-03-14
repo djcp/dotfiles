@@ -1,4 +1,0 @@
-#!/bin/bash
-mkdir -p ~/.config/google-chrome-mog/
-google-chrome --user-data-dir=$HOME/.config/google-chrome-mog/ http://rdio.com/
-# ~/firefox/firefox -P rdio -new-instance -new-window http://rdio.com

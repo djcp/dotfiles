@@ -7,10 +7,10 @@ case $action in
     key_to_send="space"
     ;;
   next*)
-    key_to_send="Right"
+    key_to_send="ctrl+Right"
     ;;
   previous*)
-    key_to_send="Left"
+    key_to_send="ctrl+Left"
     ;;
   *)
     key_to_send="space"
@@ -18,6 +18,6 @@ case $action in
 esac
 
 current_window=$(xdotool getwindowfocus)
-xdotool search --name "Rdio|A Soft Murmur" windowactivate --sync -- \
+xdotool search --name "Rdio|A Soft Murmur|Google Play Music|Spotify Player" windowactivate --sync -- \
   key "$key_to_send" \
   windowactivate "$current_window"

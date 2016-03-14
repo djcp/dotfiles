@@ -2,11 +2,11 @@
 
 KEYS="3BC1C2C3"
 
-PRIVATE_STORE_TXT="$HOME/Private/${USER}_private_store.txt"
+PRIVATE_STORE_TXT="$HOME/SpiderOak Hive/gpg_secrets/${USER}_private_store.txt"
 PRIVATE_STORE_ENCRYPTED="${PRIVATE_STORE_TXT}.asc"
 MD5SUM="${PRIVATE_STORE_TXT}.md5sum"
 NEW_MD5SUM="${PRIVATE_STORE_TXT}.md5sum.new"
-SYNC_TO="djcp@collispuro.com:/home/djcp/Private/"
+# SYNC_TO="djcp@collispuro.com:/home/djcp/Private/"
 
 # Always delete the unencrypted file at the end of the session. We DO NOT want this hanging around.
 trap "rm -f \"$PRIVATE_STORE_TXT\"; chmod 600 \"$PRIVATE_STORE_TXT\"*; exit" INT TERM EXIT
@@ -32,45 +32,45 @@ init_storage() {
     umask 77 "$HOME/Private/"
   fi
 
-  touch $PRIVATE_STORE_TXT
-  chmod 600 $PRIVATE_STORE_TXT
+  touch "$PRIVATE_STORE_TXT"
+  chmod 600 "$PRIVATE_STORE_TXT"
 }
 
 decrypt_and_edit() {
-  gpg --no-use-agent --decrypt $PRIVATE_STORE_ENCRYPTED > $PRIVATE_STORE_TXT
-  vim $PRIVATE_STORE_TXT
+  gpg --no-use-agent --decrypt "$PRIVATE_STORE_ENCRYPTED" > "$PRIVATE_STORE_TXT"
+  vim "$PRIVATE_STORE_TXT"
 }
 
 calc_md5sum(){
-  md5sum < $PRIVATE_STORE_TXT > $NEW_MD5SUM
+  md5sum < "$PRIVATE_STORE_TXT" > "$NEW_MD5SUM"
 }
 
 no_changes() {
   clear
-  rm -f $NEW_MD5SUM
+  rm -f "$NEW_MD5SUM"
   echo 'No changes, not re-encrypting'
   exit
 }
 
 encrypt_and_sync() {
-  mv $NEW_MD5SUM $MD5SUM
+  mv "$NEW_MD5SUM" "$MD5SUM"
   echo 'File has changed. Re-encrypting. . .'
-  gpg -a --encrypt -r $KEYS $PRIVATE_STORE_TXT
+  gpg -a --encrypt -r $KEYS "$PRIVATE_STORE_TXT"
   clear
 
-  echo 'Syncing to collispuro.com'
-  scp $MD5SUM \
-    $PRIVATE_STORE_ENCRYPTED \
-    $SYNC_TO
+  # echo 'Syncing to collispuro.com'
+  # scp $MD5SUM \
+  #   $PRIVATE_STORE_ENCRYPTED \
+  #   $SYNC_TO
 }
 
 init_storage
 decrypt_and_edit
 calc_md5sum
 
-if [ -e $NEW_MD5SUM ]
+if [ -e "$NEW_MD5SUM" ]
 then
-    if cmp $NEW_MD5SUM $MD5SUM
+    if cmp "$NEW_MD5SUM" "$MD5SUM"
     then
       no_changes
     else

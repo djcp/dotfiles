@@ -4,9 +4,11 @@
   pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 [alias]
   a = commit -a
+  ba = branch -a
   co = checkout
   st = status -sb
   ci = commit -v
+  fa = fetch -a
   up = !git fetch origin && git rebase origin/master
   mm = !git checkout master && git merge @{-1} --ff-only
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
@@ -15,6 +17,7 @@
   witch-hunt = blame
   duff = diff
   dom = diff origin/master
+  dod = diff origin/develop
   dc = diff --cached
   rbc = rebase --continue
   rba = rebase --abort
@@ -29,5 +32,5 @@
   ui = true
 [include]
   path = ~/.gitconfig-github
-[init]
- templatedir = ~/.git_templates
+#[init]
+# templatedir = ~/.git_templates

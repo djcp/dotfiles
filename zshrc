@@ -30,7 +30,6 @@ bindkey "^E" end-of-line
 bindkey "^P" history-search-backward
 bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
-bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 # expand functions in the prompt
 setopt prompt_subst
@@ -124,7 +123,7 @@ HISTFILE=~/.zsh_history
 export TERM=xterm-256color
 
 export SHELL=/usr/bin/zsh
-export PATH="$HOME/neovim/bin:$HOME/code/thirdparty/elasticbeanstalk/eb/linux/python2.7:$HOME/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/code/thirdparty/neovim/build/bin:$HOME/code/thirdparty/elasticbeanstalk/eb/linux/python2.7:$HOME/bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
 export PATH="$HOME/.bin:$PATH"
 

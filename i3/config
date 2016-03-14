@@ -187,7 +187,11 @@ bindsym $mod+control+p exec ~/bin/rdio_control.sh previous
 
 exec --no-startup-id xscreensaver -no-splash
 bindsym $mod+control+l exec xscreensaver-command --lock
+bindsym $mod+control+x exec sudo /usr/sbin/pm-suspend
 exec --no-startup-id xautolock -time 15 -locker '~/bin/lock_on_untrusted_networks'
+
+# Start messaging daemon
+exec --no-startup-id dunst
 
 # Move workspaces across displays
 bindsym $mod+m move workspace to output right
