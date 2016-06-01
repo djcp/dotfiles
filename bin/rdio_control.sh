@@ -18,6 +18,6 @@ case $action in
 esac
 
 current_window=$(xdotool getwindowfocus)
-xdotool search --name "Rdio|A Soft Murmur|Google Play Music|Spotify Player" windowactivate --sync -- \
+xdotool search --name "Rdio|A Soft Murmur|Google Play Music|Spotify" windowactivate --sync -- \
   key "$key_to_send" \
   windowactivate "$current_window"
