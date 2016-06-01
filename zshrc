@@ -123,7 +123,7 @@ HISTFILE=~/.zsh_history
 export TERM=xterm-256color
 
 export SHELL=/usr/bin/zsh
-export PATH="$HOME/code/thirdparty/neovim/build/bin:$HOME/code/thirdparty/elasticbeanstalk/eb/linux/python2.7:$HOME/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/code/thirdparty/neovim/build/bin:$HOME/code/thirdparty/elasticbeanstalk/eb/linux/python2.7:$HOME/bin:$HOME/firefox:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
 export PATH="$HOME/.bin:$PATH"
 
