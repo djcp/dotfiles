@@ -6,5 +6,5 @@
 # Clean up vim undo files
 2 12 * * * cd ~/.vim/undo && find -mtime +90 -type f -delete
 
-*/60 * * * * ~/bin/spideroak_backup.sh hourly
-15 12 15 * * ~/bin/spideroak_backup.sh monthly
+# */60 * * * * ~/bin/spideroak_backup.sh hourly
+# 15 12 15 * * ~/bin/spideroak_backup.sh monthly

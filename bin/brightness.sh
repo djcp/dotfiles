@@ -3,7 +3,7 @@ action="$1"
 
 max_brightness=`cat /sys/class/backlight/intel_backlight/max_brightness`
 current_brightness=`cat /sys/class/backlight/intel_backlight/brightness`
-increment=100
+increment=50
 
 case $action in
   up*)

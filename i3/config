@@ -26,6 +26,7 @@ font pango:Terminus 13
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+new_window pixel 5
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 

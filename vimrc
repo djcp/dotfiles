@@ -110,6 +110,9 @@ au BufRead,BufNewFile *.less set filetype=css
 au BufRead,BufNewFile *.bats set filetype=sh
 au BufRead,BufNewFile *.properties.erb set filetype=jproperties
 au BufRead,BufNewFile OpsWorks*.template set filetype=json
+au BufRead,BufNewFile *.exs set filetype=elixir
+au BufRead,BufNewFile *.ex set filetype=elixir
+au BufRead,BufNewFile *.eex set filetype=elixir
 
 " Leader: set to <Space>
 " Space is inserted via <C-v><Space>
@@ -169,6 +172,7 @@ Bundle 'bling/vim-airline'
 Bundle 'rking/vim-detailed'
 Bundle 'othree/html5.vim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'elixir-lang/vim-elixir'
 
 " Make CtrlP use ag for listing the files.
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
