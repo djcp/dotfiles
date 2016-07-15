@@ -21,4 +21,4 @@ else
   sink="$running_sink"
 fi
 
-pactl set-sink-volume $sink -- "$direction"
+pactl set-sink-volume $sink "$direction"
