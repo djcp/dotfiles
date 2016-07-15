@@ -14,14 +14,14 @@ action="$1"
 
 case $action in
   hourly*)
-    time SpiderOak --batchmode
+    time SpiderOakONE --batchmode
     ;;
   monthly*)
-    time SpiderOak --purge-deleted-items=7
-    time SpiderOak --purge-historical-versions
-    time SpiderOak --batchmode
+    time SpiderOakONE --purge-deleted-items=7
+    time SpiderOakONE --purge-historical-versions
+    time SpiderOakONE --batchmode
     ;;
   *)
-    time SpiderOak --batchmode
+    time SpiderOakONE --batchmode
     ;;
 esac
