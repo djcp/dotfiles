@@ -5,3 +5,4 @@ elasticsearch/logs
 log/*
 tmp/images
 node_modules/
+.ruby-version

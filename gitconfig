@@ -25,7 +25,7 @@
   name = Dan Collis-Puro
   email = dan@collispuro.net
 [core]
-  excludesfile = /home/djcp/.gitignore
+  excludesfile = /home/dcollispuro/.gitignore
 [branch]
   autosetuprebase = always
 [color]
