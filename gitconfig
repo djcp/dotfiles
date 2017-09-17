@@ -4,11 +4,12 @@
   pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 [alias]
   a = commit -a
+  b = branch
   ba = branch -a
   co = checkout
   st = status -sb
   ci = commit -v
-  fa = fetch -a
+  fa = fetch --all
   up = !git fetch origin && git rebase origin/master
   mm = !git checkout master && git merge @{-1} --ff-only
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
@@ -19,8 +20,10 @@
   dom = diff origin/master
   dod = diff origin/develop
   dc = diff --cached
+  d = diff
   rbc = rebase --continue
   rba = rebase --abort
+  rom = rebase -i origin/master
 [user]
   name = Dan Collis-Puro
   email = dan@collispuro.net

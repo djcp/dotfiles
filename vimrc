@@ -9,6 +9,8 @@ set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set ignorecase
 set smartcase
+set autoread
+au CursorHold * checktime
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -35,11 +37,16 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rking/vim-detailed'
 Plugin 'othree/html5.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'mileszs/ack.vim'
+Plugin 'AndrewRadev/ember_tools.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'vimperator/vimperator.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -72,12 +79,18 @@ if filereadable("~/.vimrc.local")
   source ~/.vimrc.local
 endif
 
-" Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor
+" " Use Ack instead of Grep when available
+" if executable("ack")
+"   set grepprg=ack\ -H\ --nogroup\ --nocolor
+" endif
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+  set grepprg=ag\ --vimgrep
 endif
 
 " Numbers
+set relativenumber
 set number
 set numberwidth=5
 " set relativenumber
@@ -158,7 +171,7 @@ let g:rspec_command = "!bundle exec rspec -fd {spec}"
 " let g:rspec_command = "!spring rspec -fd {spec}"
 
 set mousehide
-set mouse=a
+set mouse=v
 set guioptions-=m
 set guioptions-=T
 
@@ -169,7 +182,7 @@ let cwd=getcwd()
 map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
 map <F3> :source ~/.vim_session <cr>     " And load session with F3
 
-set cm=blowfish
+" set cm=blowfish
 
 set scrolloff=5
 
@@ -183,7 +196,19 @@ colorscheme detailed
 " hi NonText ctermfg=250 ctermbg=none
 hi Normal          ctermfg=252 ctermbg=none
 
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
+
+" if !exists('g:airline_symbols')
+" let g:airline_symbols = {}
+" endif
+"
+" let g:airline_left_sep = '▶️'
+" let g:airline_left_alt_sep = '▶️'
+" let g:airline_right_sep = '◀️'
+" let g:airline_right_alt_sep = '◀️'
+" let g:airline_symbols.branch = '🔰'
+" let g:airline_symbols.readonly = '📕'
+" let g:airline_symbols.linenr = '〰️'
 "
 " let g:startify_custom_header =
 "       \ map(split(system('figlet -f future `shuf -n1 ~/.vim/palindromes.txt`'), '\n'), '"   ". v:val') + ['','']

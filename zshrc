@@ -7,6 +7,7 @@ compinit
 
 # automatically enter directories without cd
 setopt auto_cd
+set -k
 
 export EDITOR=vim
 
@@ -54,6 +55,7 @@ PASS='✔'
 FAIL='✘'
 SEGV='☢'
 SUPER='⚡'
+CLOUD="☁️"
 CLEAR=$'%{\033[0;0m%}'
 RED=$'%{\033[0;0m%}%{\033[1;41m%}'
 GREEN=$'%{\033[0;0m%}%{\033[0;42m%}'
@@ -78,11 +80,17 @@ return_prompt() {
 # weather_prompt() {
 #   cat ~/.cli-weather-forecast
 # }
+#
+cloud_info() {
+  if ! [ -z "$HEROKU_CLOUD" ]; then
+    echo -n " ${WHITE}$CLOUD  $HEROKU_CLOUD${CLEAR} "
+  fi
+}
 
 PS1="
 \$(return_prompt) ${LIGHT_BLUE}%n ${YELLOW}%*\
  ${WHITE}{${LIGHT_CYAN}%~${WHITE}}\
- ${PURPLE}\$(git_prompt_info) -- ${CLEAR}${WHITE}${CLEAR}${WHITE}\
+ ${PURPLE}\$(git_prompt_info)\$(cloud_info) -- ${CLEAR}${WHITE}${CLEAR}${WHITE}\
 
 ┖ \$ "
 
@@ -95,8 +103,10 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+setopt inc_append_history
+setopt share_history
 # ignore duplicate history entries
-# setopt histignoredups
+setopt histignoredups
 # ^^^^^^^^^^^^^^^^^^^^^ This might not make sense if we're tracking
 # history and are interested in analyzing it later.
 setopt EXTENDED_HISTORY
@@ -124,7 +134,7 @@ HISTFILE=~/.zsh_history
 export TERM=xterm-256color
 
 export SHELL=/usr/bin/zsh
-export PATH="$HOME/code/thirdparty/neovim/build/bin:$HOME/code/thirdparty/elasticbeanstalk/eb/linux/python2.7:$HOME/bin:$HOME/firefox:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/code/thirdparty/neovim/build/bin:$HOME/code/thirdparty/elasticbeanstalk/eb/linux/python2.7:$HOME/bin:$HOME/firefox:$HOME/.rbenv/bin:$PATH:$HOME/.local/bin"
 eval "$(rbenv init - --no-rehash)"
 export PATH="$HOME/.bin:$PATH"
 
@@ -135,3 +145,10 @@ hitch() {
 alias unhitch='hitch -u'
 # hitch
 
+cloud() {
+  eval "$(/usr/local/bin/ion-client shell)"
+  cloud "$@"
+}
+
+export NVM_DIR="/home/dcollispuro/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
