@@ -1,0 +1,49 @@
+#!/bin/sh
+
+adblock_file=~/bin/adblock_resources/blocked_hosts.txt
+base_file=~/bin/adblock_resources/base_hosts.txt
+
+enable_block(){
+  sudo bash -c "cat \"$base_file\" \"$adblock_file\" > /etc/hosts"
+  echo "enabled!"
+}
+
+disable_block(){
+  sudo cp "$base_file" /etc/hosts
+  echo "disabled!"
+}
+
+usage(){
+  echo
+  echo "Toggle adblocking on or off by manipulating /etc/hosts"
+  echo
+  echo "Usage: ./adblock <enable|disable|update>"
+  echo
+  echo "	Updating will download the latest file from http://winhelp2002.mvps.org/hosts.txt.
+  "
+  echo "	Requires wget"
+}
+
+update_block_file(){
+  file=$(tempfile)
+  wget -nv -O "$file" http://winhelp2002.mvps.org/hosts.txt
+  cp "$file" "$adblock_file"
+  enable_block
+}
+
+action="$1"
+
+case $action in
+  enable*)
+    enable_block
+    ;;
+  disable*)
+    disable_block
+    ;;
+  update*)
+    update_block_file
+    ;;
+  *)
+    usage
+    ;;
+esac
