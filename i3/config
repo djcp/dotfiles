@@ -153,15 +153,15 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  font pango:Terminus 18
+  font pango:Terminus 24
   colors {
     background  #222222
     statusline #cccccc
     separator #ffff00
   }
-  # status_command ~/bin/i3status_custom.sh
-  status_command cd /home/dcollispuro/code/personal/rbi3status && bundle exec ./rbi3status.rb
-  # status_command export PATH=~/.rbenv/shims:~/.rbenv/bin:$PATH; eval "$(rbenv init -)"; cd ~/code/personal/rbi3status && bundle exec ./rbi3status.rb
+  # status_command ~/.bin/i3status_custom.sh
+  # status_command cd /home/dcollispuro/code/personal/rbi3status && bundle exec ./rbi3status.rb
+  status_command bash -c 'export PATH=~/.asdf/shims:~/.asdf/bin:$PATH; source $HOME/.asdf/asdf.sh; cd ~/code/personal/rbi3status && bundle exec ./rbi3status.rb'
   mode hide
 }
 
@@ -200,7 +200,7 @@ bindsym $mod+control+x exec sudo /usr/sbin/pm-suspend
 exec --no-startup-id nm-applet
 
 # Start messaging daemon
-exec --no-startup-id dunst
+# exec --no-startup-id dunst
 
 # Move workspaces across displays
 bindsym $mod+m move workspace to output right
@@ -209,5 +209,5 @@ bindsym $mod+b move workspace to output up
 bindsym $mod+x move workspace to output down
 
 # brightness
-bindsym XF86MonBrightnessDown exec sudo ~/bin/brightness.sh down
-bindsym XF86MonBrightnessUp exec sudo ~/bin/brightness.sh up
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
