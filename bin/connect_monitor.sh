@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CONNECTED_MONITOR=$(xrandr | grep ' connected' | grep -vE 'LVDS1|eDP1' | cut -f1 -d ' ')
-LAPTOP_PANEL=$(xrandr | grep ' connected' | grep -E 'LVDS1|eDP1' | cut -f1 -d ' ')
+CONNECTED_MONITOR=$(xrandr | grep ' connected' | grep -vE 'LVDS1|eDP1|DP-3' | cut -f1 -d ' ')
+LAPTOP_PANEL=$(xrandr | grep ' connected' | grep -E 'LVDS1|eDP1|DP-3' | cut -f1 -d ' ')
 ORIENTATION_OPTION=''
 
 # right-of left-of above below
@@ -37,11 +37,11 @@ if [ "$CONNECTED_MONITOR" != '' ]; then
       ORIENTATION_OPTION="same-as"
       ;;
     *)
-      ORIENTATION_OPTION="right-of"
+      ORIENTATION_OPTION="left-of"
       ;;
   esac
 
-  xrandr --output $CONNECTED_MONITOR --auto --$ORIENTATION_OPTION $LAPTOP_PANEL
+  xrandr --output "$CONNECTED_MONITOR" --auto --$ORIENTATION_OPTION "$LAPTOP_PANEL"
 else
   echo 'No non-LVDS1 monitor connected'
 fi
