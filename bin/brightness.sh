@@ -1,8 +1,8 @@
 #!/bin/sh
 action="$1"
 
-max_brightness=`cat /sys/class/backlight/intel_backlight/max_brightness`
-current_brightness=`cat /sys/class/backlight/intel_backlight/brightness`
+max_brightness=`cat /sys/class/backlight/acpi_video0/max_brightness`
+current_brightness=`cat /sys/class/backlight/acpi_video0/brightness`
 increment=50
 
 case $action in
@@ -20,4 +20,4 @@ case $action in
     ;;
 esac
 
-echo $current_brightness > /sys/class/backlight/intel_backlight/brightness
+echo $current_brightness > /sys/class/backlight/acpi_video0/brightness
