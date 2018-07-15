@@ -6,3 +6,4 @@ log/*
 tmp/images
 node_modules/
 .ruby-version
+.tool-versions
