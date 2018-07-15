@@ -134,9 +134,7 @@ HISTFILE=~/.zsh_history
 export TERM=xterm-256color
 
 export SHELL=/usr/bin/zsh
-export PATH="$HOME/code/thirdparty/neovim/build/bin:$HOME/code/thirdparty/elasticbeanstalk/eb/linux/python2.7:$HOME/bin:$HOME/firefox:$HOME/.rbenv/bin:$PATH:$HOME/.local/bin"
-eval "$(rbenv init - --no-rehash)"
-export PATH="$HOME/.bin:$PATH"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 
 hitch() {
   command hitch "$@"
@@ -150,5 +148,12 @@ cloud() {
   cloud "$@"
 }
 
-export NVM_DIR="/home/dcollispuro/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# options picked up by asdf and probably gcc
+export RUBY_CONFIGURE_OPTIONS="--with-jemalloc"
+export CFLAGS="-march=native -O3"
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+# heroku autocomplete setup
+CLI_ENGINE_AC_ZSH_SETUP_PATH=/home/dcollispuro/.cache/heroku/completions/zsh_setup && test -f $CLI_ENGINE_AC_ZSH_SETUP_PATH && source $CLI_ENGINE_AC_ZSH_SETUP_PATH;
