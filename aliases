@@ -63,3 +63,4 @@ alias i3lock="i3lock -c 000000"
 
 alias urlencode="ruby -e \"require 'cgi'; puts CGI.escape(ARGV.first);\""
 alias update_binstubs="bundle install --binstubs .bundle/bin"
+alias spotify="spotify --force-device-scale-factor=1.5"
