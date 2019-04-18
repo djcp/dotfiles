@@ -90,7 +90,6 @@ if executable('ag')
 endif
 
 " Numbers
-set relativenumber
 set number
 set numberwidth=5
 " set relativenumber
