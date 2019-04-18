@@ -64,7 +64,7 @@ if [ $UID == 0 ]; then
     ISSUDO=" ${REDFG}-⚡⚡⚡-"
 fi
 
-WEATHER=$(< ~/.cli-weather-forecast)
+#WEATHER=$(< ~/.cli-weather-forecast)
 
 # PS1="\n┎\`RC=\$?;\
 # if [ \$RC = 0 ]; then echo ${GREEN}${PASS}${WHITE};\

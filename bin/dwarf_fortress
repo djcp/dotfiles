@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+dwarf-fortress &
+cd ~/games
+exec ./DwarfTherapist-v40.1.2-linux-x86_64.AppImage

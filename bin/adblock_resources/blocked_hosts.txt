@@ -2786,6 +2786,7 @@
 0.0.0.0 se.monetate.net
 0.0.0.0 ads2.msads.net
 # 0.0.0.0 cdn.mxpnl.com #[affects optimum.com]
+0.0.0.0 rainbow-nl.mythings.com
 0.0.0.0 s.ntv.io
 0.0.0.0 adcache.nymag.com
 0.0.0.0 cdn.optimizely.com
