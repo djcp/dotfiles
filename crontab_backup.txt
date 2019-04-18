@@ -2,6 +2,7 @@
 
 */30 * * * * "$HOME"/bin/random_background.sh
 15 12 * * * /usr/bin/crontab -l > "$HOME"/code/personal/dotfiles/crontab_backup.txt
+30 12 * * * /usr/bin/dpkg -l | grep '^i' > "$HOME"/code/personal/dotfiles/installed_packages.txt
 
 # Clean up vim undo files
 2 12 * * * cd ~/.vim/undo && find -mtime +90 -type f -delete
