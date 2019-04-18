@@ -95,9 +95,9 @@ PS1="
 ┖ \$ "
 
 function zle-line-init zle-keymap-select {
-  RPS1="${LIGHT_CYAN}${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}${WHITE}"
-  RPS2=$RPS1
-  zle reset-prompt
+  # RPS1="${LIGHT_CYAN}${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}${WHITE}"
+  # RPS2=$RPS1
+  # zle reset-prompt
 }
 
 zle -N zle-line-init
